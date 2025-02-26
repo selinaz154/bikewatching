@@ -1,17 +1,11 @@
  // Set your Mapbox access token here
  
  mapboxgl.accessToken = 'pk.eyJ1Ijoic2VsaW5hejE1NCIsImEiOiJjbTdjdGd3M28wNXhrMnJvYzNwZjlxbWZpIn0.RVdE8Higg92tSd5w7Xwh-g'; 
-     
-        
-        
-  //Lab7 step 1.3
-  // Set your Mapbox access token here
-  
+
 
   const svg = d3.select('#map').select('svg');
   // let stations = [];
-  
-     // Initialize the map
+
   const map = new mapboxgl.Map({
       container: 'map', // ID of the div where the map will render
       style: 'mapbox://styles/mapbox/navigation-day-v1', // Map style
@@ -153,29 +147,7 @@
       }
       
 
-      // console.log(arrivals);
-      // console.log(departures);
-      // stations = stations.map((station) =>{
-      //   let id = station.short_name;
-      //   station.arrivals = arrivals.get(id) ?? 0;
-      //   station.departures = departures.get(id) ?? 0;
-      //   station.totalTraffic = station.arrivals + station.departures;
-      //   return station; //This completes the update
-      // });
-
   
-      // // console.log(stations);
-      // const radiusScale = d3.scaleSqrt()
-      // .domain([0, d3.max(stations, (d) => d.totalTraffic)])
-      // .range([0, 25]);
-  
-      // circles.attr('r', (d) => radiusScale(d.totalTraffic))//overwrite r
-      // .each(function(d) {
-      //   // Add <title> for browser tooltips
-      //   d3.select(this)
-      //     .append('title')
-      //     .text(`${d.totalTraffic} trips (${d.departures} departures, ${d.arrivals} arrivals)`);
-      // });
       function updateStationCircles(stations) {
         const radiusScale = d3.scaleSqrt()
           .domain([0, d3.max(stations, (d) => d.totalTraffic)])
